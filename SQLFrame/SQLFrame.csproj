@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{AA2EA6C7-C49A-4187-A984-C10A5C6FCD39}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SQLFrame</RootNamespace>
+    <AssemblyName>SQLFrame</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DynamicData.Design">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Entity.Design">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.cs" />
+    <Compile Include="GridData.cs" />
+    <Compile Include="groupby.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sumatorio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

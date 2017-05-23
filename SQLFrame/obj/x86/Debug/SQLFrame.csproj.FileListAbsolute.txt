@@ -1,0 +1,5 @@
+C:\projects\SQLFrame\SQLFrame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\projects\SQLFrame\SQLFrame\bin\Debug\SQLFrame.dll
+C:\projects\SQLFrame\SQLFrame\obj\x86\Debug\SQLFrame.dll
+C:\projects\SQLFrame\SQLFrame\obj\x86\Debug\SQLFrame.pdb
+C:\projects\SQLFrame\SQLFrame\bin\Debug\SQLFrame.pdb
