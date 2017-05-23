@@ -1,0 +1,7 @@
+C:\Documents and Settings\ics_raul.TRADE\Mis documentos\SharpDevelop Projects\SQLPDF\SQLPDF\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\ics_raul.TRADE\Mis documentos\SharpDevelop Projects\SQLPDF\SQLPDF\bin\Debug\SQLPDF.dll
+C:\Documents and Settings\ics_raul.TRADE\Mis documentos\SharpDevelop Projects\SQLPDF\SQLPDF\bin\Debug\SQLPDF.pdb
+C:\Documents and Settings\ics_raul.TRADE\Mis documentos\SharpDevelop Projects\SQLPDF\SQLPDF\bin\Debug\itextsharp.dll
+C:\Documents and Settings\ics_raul.TRADE\Mis documentos\SharpDevelop Projects\SQLPDF\SQLPDF\bin\Debug\itextsharp.xml
+C:\Documents and Settings\ics_raul.TRADE\Mis documentos\SharpDevelop Projects\SQLPDF\SQLPDF\obj\x86\Debug\SQLPDF.dll
+C:\Documents and Settings\ics_raul.TRADE\Mis documentos\SharpDevelop Projects\SQLPDF\SQLPDF\obj\x86\Debug\SQLPDF.pdb
