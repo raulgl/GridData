@@ -17,7 +17,7 @@ using System.IO;
 namespace SQLFrame
 {
 	/// <summary>
-	/// Description of Core.
+	/// ESta clase es el Core de la libreria
 	/// </summary>
 	public class Core
 	{
@@ -26,6 +26,9 @@ namespace SQLFrame
     	protected static int pos_file=0;//posicion actual dentro de la linea del informe
     	protected static Dictionary<string, string> json;//objeto json parseado
     	protected DataTable result;
+    	/// <summary>
+    	/// Funcion que devuelve el DataTable resultado del proceso
+    	/// </summary>
     	public DataTable resultado
     	{
         	get
@@ -34,6 +37,15 @@ namespace SQLFrame
         	}
         
     	}
+    	/// <summary>
+    	/// Constructura que a partir del fichero json pasado por parametro 
+    	/// construye la infraestructura del ArrayList de groupby con todos los group
+    	/// by que hay en el json y para cada uno se crea y añade un sumatorio para cada
+    	/// sumatorio y contador del json
+    	/// </summary>
+    	/// <param name="formato">no utilizado de momento</param>
+    	/// <param name="filepdf">no utilizado de momento</param>
+    	/// <param name="fileconfig">json que se parsea</param>
 		public Core(string formato,string filepdf,string fileconfig)
 		{
 			result = GridData.queryresult.Clone();
@@ -64,13 +76,23 @@ namespace SQLFrame
 				groups.Add(g);
 			}
 		}
-		
+		/// <summary>
+		/// Anyade una row de un datarow al datatable de destino.Tambien mira si es diferente en algunos de los
+		/// campos que estan en los group by.Esto quiere decir que antes poner los sumatorios de los group by 
+		/// anteriores y ponerlos a 0.
+		/// </summary>
+		/// <param name="row"></param>
 		public void ad(DataRow row){
 			DataRow dr = result.NewRow();
 			dr.ItemArray = row.ItemArray;
 			int i=0;
         	bool reseteado=false;
         	ArrayList groupsprintar = new ArrayList();
+        	/*Buscamos para cada group by corresponde con la columna de la row
+        	 * cuando la encuentra mira si el contenido de la row es igual al campo actual 
+        	 * o no.Si no lo es pone ese grupo a printar y actualiza el actual del grupo al
+        	 * contenido de la columna.Si lo es suma los valores del row a los sumatorios del
+        	 * group by*/
         	while(i<groups.Count && !reseteado){
             	int j=0;
             	bool encontrado=false;            
@@ -91,6 +113,8 @@ namespace SQLFrame
             	}
             	i++;
         	}
+        	/*Com los group by que estan mas abajo automaticamente los ponemos
+        	 * en el grupo de printar y actualizamos el campo actualizar al de la row*/
         	Groupby groupnuevo = (Groupby)groups[0];
         	groupnuevo.sum(row);
         	while(i<groups.Count){
@@ -111,6 +135,13 @@ namespace SQLFrame
         	printar(groupsprintar,0,row);
         	result.Rows.Add(dr);
 		}
+		/// <summary>
+		/// printa los groupsby que estan en el groupsprintar a partir de la po
+		/// sicion i de este
+		/// </summary>
+		/// <param name="groupsprintar"></param>
+		/// <param name="i"></param>
+		/// <param name="row"></param>
 		public void printar(ArrayList groupsprintar, int i,DataRow row ){
 			if(i<groupsprintar.Count){
             	i++;

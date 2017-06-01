@@ -13,7 +13,7 @@ using System.Data;
 namespace SQLFrame
 {
 	/// <summary>
-	/// Description of MyClass.
+	/// ES la entrada principal de la libreria
 	/// </summary>
 	
 	public class GridData
