@@ -131,14 +131,14 @@ namespace SQLPDF
 		/// </summary>
 		/// <param name="dt">Tabla que vamos a printar en pdf</param>
 		/// <param name="path">path donde se guardara el pdf final</param>
-		public void ExportToPdf(DataTable dt,string path)
+		public void ExportToPdf(DataTable dt,string path,string patron)
    		{
 			/*Abrimos un fichero de tipo pdf*/			
 			Document document = new Document(PageSize.A4.Rotate());    		
     		PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
     		document.Open();
     		/*Cargamos como imagen la que tenemos como plantilla*/
-    		System.Drawing.Image gif = System.Drawing.Image.FromFile("0001.png");    		
+    		System.Drawing.Image gif = System.Drawing.Image.FromFile(patron);    		
 			Graphics graphics = Graphics.FromImage(gif);
 			printar_cabecera(graphics,dt);
 			SolidBrush drawBrush = new SolidBrush(Color.Black);
@@ -163,7 +163,7 @@ namespace SQLPDF
         			if(lineaact==n_tickets_pag){
         				lineaact=0;
         				document.Add(iTextSharp.text.Image.GetInstance(gif,System.Drawing.Imaging.ImageFormat.Gif));
-        				gif = System.Drawing.Image.FromFile("0001.png");
+        				gif = System.Drawing.Image.FromFile(patron);
     					graphics = Graphics.FromImage(gif);
     					printar_cabecera(graphics,dt);
         				
