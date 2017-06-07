@@ -33,7 +33,7 @@ namespace SQLFrame
         	posicion=pos;
         	sumatorios = new System.Collections.ArrayList();
         	clas = "";
-        	total = "";
+        	total = "TOTAL";
     	}
 		/// <summary>
 		/// De momento no se utiliza
@@ -114,7 +114,7 @@ namespace SQLFrame
 		/// <param name="dt"></param>
     	public void print_dt(DataTable dt){
     		DataRow dr = dt.NewRow();
-    		dr[posicion]="TOTAL";
+    		dr[posicion]=total;
     		foreach (Sumatorio sum in sumatorios){
     			sum.get_Sumatorio(dr);
         	} 
